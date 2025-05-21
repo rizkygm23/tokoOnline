@@ -79,14 +79,14 @@ addon1">
                                     @enderror
                                 </div>
                                 <div class="input-group mb-3">
-                                    <div class="input-group-prepend">
+                                    <div class="input-group-prepend  ">
                                         <span class="input-group-text bg-warning text
 white" id="basic-addon2"><i
                                                 class="ti-pencil"></i></span>
                                     </div>
                                     <input type="password" name="password"
                                         class="form
-control form-control-lg @error('password') is-invalid @enderror"
+control form-control-lg w-full @error('password') is-invalid @enderror"
                                         placeholder="Masukkan 
 Password" aria-label="Password"
                                         aria-describedby="basic-addon1">
