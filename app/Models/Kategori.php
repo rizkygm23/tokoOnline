@@ -8,4 +8,10 @@ public $timestamps = false;
 protected $table = "kategori"; 
 // protected $fillable = [nama_kategori]; 
 protected $guarded = ['id']; 
+
+public function produk()
+{
+    return $this->hasMany(Produk::class);
+}
 } 
+

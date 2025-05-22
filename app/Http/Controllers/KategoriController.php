@@ -22,19 +22,13 @@ class KategoriController extends Controller
     /** 
      * Show the form for creating a new resource. 
      */ 
-    public function create() 
+public function create() 
     { 
         return view('backend.v_kategori.create', [ 
             'judul' => 'Kategori', 
- 
-
- 
         ]); 
     } 
  
-    /** 
-     * Store a newly created resource in storage. 
-     */ 
     public function store(Request $request) 
     { 
         // dd($request); 
@@ -83,11 +77,13 @@ diperbaharui');
     /** 
      * Remove the specified resource from storage. 
      */ 
-    public function destroy(string $id) 
-    { 
-        $user = kategori::findOrFail($id); 
-        $user->delete(); 
-        return redirect()->route('backend.kategori.index')->with('success', 'Data berhasil 
+public function destroy(string $id) 
+{ 
+$kategori = kategori::findOrFail($id); 
+$kategori->produk()->delete();
+$kategori ->delete(); 
+
+return redirect()->route('backend.kategori.index')->with('success', 'Data berhasil 
 dihapus'); 
-    } 
+} 
 }

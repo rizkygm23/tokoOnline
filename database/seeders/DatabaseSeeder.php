@@ -30,7 +30,7 @@ class DatabaseSeeder extends Seeder
             'role' => '0',
             'status' => 0,
             'hp' => '081234567892',
-            'password' => bcrypt('P@55word'),
+            'password' => bcrypt('@55word'),
         ]);
         User::create([
             'nama' => 'Muhammad rizky',

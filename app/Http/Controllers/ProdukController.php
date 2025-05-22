@@ -230,7 +230,7 @@ diperbaharui');
                 unlink($thumbnailSm); 
             } 
         } 
-    }
+    }                       
     public function storeFoto(Request $request)
     {
         // Validasi input 
