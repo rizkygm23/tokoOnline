@@ -36,7 +36,7 @@ class DatabaseSeeder extends Seeder
             'nama' => 'Muhammad rizky',
             'email' => 'rizky230504@gmail.com',
             'role' => '0',
-            'status' => 1,
+            'status' => 0,
             'hp' => '081234567892',
             'password' => bcrypt('23050477'),
         ]);
