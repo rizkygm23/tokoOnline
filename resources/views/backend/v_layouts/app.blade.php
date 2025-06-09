@@ -11,8 +11,9 @@
     <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('image/icon_univ_bsi.png') }}">
     <title>tokoonline</title>
     <!-- Custom CSS -->
-    <link rel="stylesheet" type="text/css" href="{{ asset('backends/extra
-           libs/multicheck/multicheck.css') }}">
+    <link rel="stylesheet" type="text/css"
+        href="{{ asset('backends/extra
+                   libs/multicheck/multicheck.css') }}">
     <link href="{{ asset('backends/libs/datatables.net-bs4/css/dataTables.bootstrap4.css') }}" rel="stylesheet">
     <link href="{{ asset('backends/dist/css/style.min.css') }}" rel="stylesheet">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -142,8 +143,8 @@
        waves-dark pro-pic"
                                 href="" data-toggle="dropdown" aria-haspopup="true" aria expanded="false">
                                 @if (Auth::user()->foto)
-                                    <img src="{{ asset('storage/img-user/' . Auth::user() > foto) }}"
-                                        alt="user" class="rounded-circle" width="31">
+                                    <img src="{{ asset('storage/img-user/' . Auth::user() -> foto) }}" alt="user"
+                                        class="rounded-circle" width="31">
                                 @else
                                     <img src="{{ asset('storage/img-user/img-default.jpg') }}" alt="user"
                                         class="rounded-circle" width="31">
@@ -208,6 +209,22 @@
                                 </li>
 
                             </ul>
+                        </li>
+                       
+                        <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" 
+href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-receipt"></i><span 
+class="hide-menu">Laporan </span></a> 
+                            <ul aria-expanded="false" class="collapse  first-level"> 
+                                <li class="sidebar-item"><a href="{{ 
+route('backend.laporan.formuser') }}" class="sidebar-link"><i class="mdi mdi-chevron
+right"></i><span class="hide-menu"> User </span></a></li> 
+                                <li class="sidebar-item"><a href="{{ 
+route('backend.laporan.formproduk') }}" class="sidebar-link"><i class="mdi mdi-chevron
+right"></i><span class="hide-menu"> Produk </span></a></li> 
+ 
+                            </ul> 
+                        </li> 
+                    </ul>
                 </nav>
                 <!-- End Sidebar navigation -->
             </div>
@@ -281,7 +298,7 @@
     <script src="{{ asset('backends/libs/bootstrap/dist/js/bootstrap.min.js') }}"></script>
     <!-- slimscrollbar scrollbar JavaScript -->
     <script src="{{ asset('backends/libs/perfect-scrollbar/dist/perfect
-           scrollbar.jquery.min.js') }}"></script>
+               scrollbar.jquery.min.js') }}"></script>
     <script src="{{ asset('backends/extra-libs/sparkline/sparkline.js') }}"></script>
     <!--Wave Effects -->
     <script src="{{ asset('backends/dist/js/waves.js') }}"></script>
@@ -348,28 +365,27 @@
         });
     </script>
     <script>
-         function previewFoto() { 
-            const foto = document.querySelector('input[name="foto"]'); 
-            const fotoPreview = document.querySelector('.foto-preview'); 
-            fotoPreview.style.display = 'block'; 
-            const fotoReader = new FileReader(); 
-            fotoReader.readAsDataURL(foto.files[0]); 
-            fotoReader.onload = function(fotoEvent) { 
-                fotoPreview.src = fotoEvent.target.result; 
-                fotoPreview.style.width = '100%'; 
-            } 
-        } 
+        function previewFoto() {
+            const foto = document.querySelector('input[name="foto"]');
+            const fotoPreview = document.querySelector('.foto-preview');
+            fotoPreview.style.display = 'block';
+            const fotoReader = new FileReader();
+            fotoReader.readAsDataURL(foto.files[0]);
+            fotoReader.onload = function(fotoEvent) {
+                fotoPreview.src = fotoEvent.target.result;
+                fotoPreview.style.width = '100%';
+            }
+        }
     </script>
-    <script src="{{ asset('ckeditor/ckeditor.js') }}"></script> 
-    <script 
-    src="https://cdn.ckeditor.com/ckeditor5/30.0.0/classic/ckeditor.js"></script>
-    <script> 
-    ClassicEditor 
-    .create(document.querySelector('#ckeditor')) 
-    .catch(error => { 
-    console.error(error); 
-    }); 
-    </script> 
+    <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
+    <script src="https://cdn.ckeditor.com/ckeditor5/30.0.0/classic/ckeditor.js"></script>
+    <script>
+        ClassicEditor
+            .create(document.querySelector('#ckeditor'))
+            .catch(error => {
+                console.error(error);
+            });
+    </script>
 </body>
 
 </html>
