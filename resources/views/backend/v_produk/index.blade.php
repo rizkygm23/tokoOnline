@@ -77,6 +77,33 @@ show_confirm" data-konf-delete="{{ $row->nama }}" title='Hapus Data'>
         </div> 
     </div> 
 </div> 
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const confirmButtons = document.querySelectorAll('.show_confirm');
+        confirmButtons.forEach(button => {
+            button.addEventListener('click', function (event) {
+                event.preventDefault();
+                const form = this.closest("form");
+                const name = this.getAttribute("data-konf-delete");
+                Swal.fire({
+                    title: `Hapus data "${name}"?`,
+                    text: "Data yang dihapus tidak bisa dikembalikan!",
+                    icon: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#d33",
+                    cancelButtonColor: "#3085d6",
+                    confirmButtonText: "Ya, hapus!",
+                    cancelButtonText: "Batal"
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        form.submit();
+                    }
+                });
+            });
+        });
+    });
+</script>
  
 <!-- contentAkhir --> 
 @endsection 

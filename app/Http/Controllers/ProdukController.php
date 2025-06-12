@@ -230,6 +230,8 @@ diperbaharui');
                 unlink($thumbnailSm); 
             } 
         } 
+         $produk->delete(); 
+        return redirect()->route('backend.produk.index')->with('success', 'Data berhasil dihapus.');
     }                       
     public function storeFoto(Request $request)
     {
